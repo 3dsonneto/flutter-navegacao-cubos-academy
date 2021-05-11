@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, "third");
+            Navigator.pushNamed(context, "third", arguments: "Terceira Tela");
           },
           child: Text("Tela 3"),
         ),
