@@ -11,7 +11,8 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => SecondScreen()),
+            MaterialPageRoute(
+                builder: (context) => SecondScreen("Segunda Tela")),
           );
         },
         child: Text("Tela 2"),
