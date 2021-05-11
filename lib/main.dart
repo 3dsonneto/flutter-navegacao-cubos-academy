@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/third_screen.dart';
 
 import 'home_screen.dart';
 
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: HomeScreen(),
+      routes: {
+        "third": (context) => ThirdScreen(),
+      },
     );
   }
 }
