@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/third_screen.dart';
 
 class SecondScreen extends StatelessWidget {
   final String title;
@@ -13,13 +14,34 @@ class SecondScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: Container(
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context, "Olá tela home");
-              },
-              child: Text("Voltar"),
-            ),
+          child: Column(
+            children: [
+              Container(
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, "Olá tela home");
+                  },
+                  child: Text("Voltar"),
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  final parameters = ThirdParameters("Edson", 24);
+                  Navigator.pushNamed(context, "third", arguments: parameters);
+                },
+                child: Text(
+                  "Tela 3",
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  final parameters = ThirdParameters("Edson", 24);
+                  Navigator.popAndPushNamed(context, "third",
+                      arguments: parameters);
+                },
+                child: Text("Replace Screen"),
+              ),
+            ],
           ),
         ),
       ),

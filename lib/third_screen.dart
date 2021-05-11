@@ -23,7 +23,21 @@ class _ThirdScreenState extends State<ThirdScreen> {
         title: Text(parameters.name),
       ),
       body: Center(
-        child: Text("${parameters.idade}"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("${parameters.idade}"),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName("/"),
+                );
+              },
+              child: Text("Home"),
+            ),
+          ],
+        ),
       ),
     );
   }
