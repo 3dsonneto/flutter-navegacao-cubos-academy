@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigation/third_screen.dart';
 import 'second_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,7 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         ElevatedButton(
           onPressed: () {
-            Navigator.pushNamed(context, "third", arguments: "Terceira Tela");
+            final parameter = ThirdParameters("Edson", 24);
+            Navigator.pushNamed(context, "third", arguments: parameter);
           },
           child: Text("Tela 3"),
         ),
